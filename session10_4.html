@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cookie Manager</title>
+  <style>
+    body {
+      background-color: #808080; /* gray background */
+      font-family: Arial;
+      padding: 20px;
+    }
+    button {
+      margin: 5px;
+    }
+  </style>
+  <script>
+    function setCookie(name, value) {
+      document.cookie = name + "=" + value + "; path=/";
+      alert("Cookie " + name + " set.");
+    }
+
+    function getCookie(name) {
+      const cookies = document.cookie.split("; ");
+      for (let i = 0; i < cookies.length; i++) {
+        const pair = cookies[i].split("=");
+        if (pair[0] === name) {
+          alert("name=" + pair[1]);
+          return;
+        }
+      }
+      alert("name=");
+    }
+
+    function deleteCookie(name) {
+      document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      alert("Cookie " + name + " deleted.");
+    }
+
+    function displayAllCookies() {
+      if (document.cookie.length === 0) {
+        alert("No cookies found.");
+      } else {
+        alert("All cookies:\n" + document.cookie);
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <button onclick="setCookie('cookie1', 'Ritan Roy')">Set Cookie1</button>
+  <button onclick="getCookie('cookie1')">Get Cookie1</button>
+  <button onclick="deleteCookie('cookie1')">Delete Cookie1</button><br>
+
+  <button onclick="setCookie('cookie2', 'Duke William')">Set Cookie2</button>
+  <button onclick="getCookie('cookie2')">Get Cookie2</button>
+  <button onclick="deleteCookie('cookie2')">Delete Cookie2</button><br>
+
+  <button onclick="displayAllCookies()">Display all cookies</button>
+
+</body>
+</html>

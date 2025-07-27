@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show Full Name</title>
+</head>
+<body>
+
+<h3>Accessing all the elements of HTML Form with document.forms</h3>
+
+<form name="myForm">
+  First name: <input type="text" name="fname" value="Bhagat"><br><br>
+  Last name: <input type="text" name="lname" value="Singh"><br><br>
+</form>
+
+<p>Click on "Try" button to show the value of elements in the form.</p>
+
+<button onclick="showFullName()">Try</button>
+
+<p id="result"></p>
+
+<script>
+function showFullName() {
+  let fname = document.forms["myForm"]["fname"].value;
+  let lname = document.forms["myForm"]["lname"].value;
+  document.getElementById("result").innerHTML = fname + " " + lname;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Child Element Example</title>
+  <script>
+    function addElement() {
+      // Create a new paragraph element
+      var newPara = document.createElement("p");
+      
+      // Add text to the paragraph
+      newPara.textContent = "This is a new paragraph added dynamically.";
+
+      // Find the parent div and append the new paragraph as its child
+      document.getElementById("container").appendChild(newPara);
+    }
+  </script>
+</head>
+<body>
+
+  <h2>Click the button to add a new paragraph</h2>
+
+  <div id="container">
+    <p>Original paragraph.</p>
+  </div>
+
+  <button onclick="addElement()">Add Paragraph</button>
+
+</body>
+</html>

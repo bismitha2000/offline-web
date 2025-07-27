@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Image using onchange</title>
+  <style>
+    img {
+      width: 300px;
+      height: 200px;
+      border: 2px solid #444;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Select an action to change the image:</h2>
+
+  <select id="actionSelect" onchange="changeImage()">
+    <option value="">-- Choose an Event --</option>
+    <option value="mouseover">Mouse Over</option>
+    <option value="mouseout">Mouse Out</option>
+    <option value="mousedown">Mouse Down</option>
+    <option value="mouseup">Mouse Up</option>
+  </select>
+
+  <br><br>
+
+  <img id="myImage" src="https://images.unsplash.com/photo-1610878180933-76456b07a085?auto=format&fit=crop&w=600&q=60" alt="Default Image">
+
+  <script>
+    function changeImage() {
+      let selectedValue = document.getElementById("actionSelect").value;
+      let image = document.getElementById("myImage");
+
+      if (selectedValue === "mouseover") {
+        image.src = "https://images.unsplash.com/photo-1606112219348-204d7d8b94ee?auto=format&fit=crop&w=600&q=60";
+      } else if (selectedValue === "mouseout") {
+        image.src = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=60";
+      } else if (selectedValue === "mousedown") {
+        image.src = "https://images.unsplash.com/photo-1496307653780-42ee777d4833?auto=format&fit=crop&w=600&q=60";
+      } else if (selectedValue === "mouseup") {
+        image.src = "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=600&q=60";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show Date and Time</title>
+</head>
+<body>
+
+  <p>Click on submit button to display Date and Time.</p>
+
+  <button onclick="showDateTime()">Submit</button>
+
+  <p id="datetime"></p>
+
+  <script>
+    function showDateTime() {
+      document.getElementById("datetime").innerHTML = new Date();
+    }
+  </script>
+
+</body>
+</html>

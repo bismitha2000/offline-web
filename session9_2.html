@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Load External Content</title>
+  <style>
+    #externalContent {
+      padding: 20px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body onload="loadContent()">
+
+  <h2>Web Page Using Callback with XMLHttpRequest</h2>
+  <div id="externalContent">Loading external content...</div>
+
+  <script>
+    function loadContent() {
+      const xhr = new XMLHttpRequest();
+
+      xhr.open('GET', 'content.html', true);
+
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          document.getElementById('externalContent').innerHTML = xhr.responseText;
+        } else {
+          document.getElementById('externalContent').innerHTML = "Failed to load content.";
+        }
+      };
+
+      xhr.onerror = function () {
+        document.getElementById('externalContent').innerHTML = "Error occurred while loading.";
+      };
+
+      xhr.send();
+    }
+  </script>
+
+</body>
+</html>

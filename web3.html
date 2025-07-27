@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Me</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f8fc;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #2a5d84;
+    }
+    .bold {
+      font-weight: bold;
+    }
+    table {
+      border-collapse: collapse;
+      width: 60%;
+      margin-bottom: 20px;
+    }
+    table, th, td {
+      border: 1px solid #555;
+      padding: 8px;
+    }
+    .reverse-list {
+      display: flex;
+      flex-direction: column-reverse;
+      color: #3c3c3c;
+    }
+    .section {
+      margin-top: 30px;
+    }
+    .job-box {
+      display: flex;
+      gap: 30px;
+    }
+    .job-box img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to My Web Page!</h1>
+
+  <!-- Personal Details -->
+  <p><strong>Name:</strong> Bismitha S</p>
+  <p><strong>Gender:</strong> Female</p>
+  <p><strong>Age:</strong> 22</p>
+
+  <!-- About Me -->
+  <div class="section">
+    <h2>About Me</h2>
+    <p>I'm a <span class="bold">creative</span> and <span class="bold">curious</span> learner, always eager to explore new skills. I believe in <span class="bold">growth</span> through knowledge and experience.</p>
+  </div>
+
+  <!-- Time Table -->
+  <div class="section">
+    <h2>My Classes</h2>
+    <table>
+      <tr>
+        <th>Day</th>
+        <th>Subject</th>
+        <th>Time</th>
+      </tr>
+      <tr>
+        <td>Monday</td>
+        <td>HTML & CSS</td>
+        <td>10:00 AM - 11:30 AM</td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td>JavaScript</td>
+        <td>10:00 AM - 11:30 AM</td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td>React.js</td>
+        <td>2:00 PM - 3:30 PM</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Favorites -->
+  <div class="section">
+    <h2>My Favorites</h2>
+
+    <h3>Movies</h3>
+    <div class="reverse-list">
+      <p>✔ <a href="https://www.imdb.com/title/tt4154796/" target="_blank">Avengers: Endgame</a></p>
+      <p>✔ <a href="https://www.imdb.com/title/tt1853728/" target="_blank">Django Unchained</a></p>
+      <p>✔ <a href="https://www.imdb.com/title/tt1375666/" target="_blank">Inception</a></p>
+    </div>
+
+    <h3>Books</h3>
+    <div class="reverse-list">
+      <p>📘 <span style="color: darkgreen;">Atomic Habits</span></p>
+      <p>📘 <span style="color: brown;">The Alchemist</span></p>
+      <p>📘 <span style="color: navy;">Wings of Fire</span></p>
+    </div>
+
+    <h3>TV Shows</h3>
+    <div class="reverse-list">
+      <p>📺 <span style="color: teal;">Friends</span></p>
+      <p>📺 <span style="color: purple;">Stranger Things</span></p>
+      <p>📺 <span style="color: crimson;">Sherlock</span></p>
+    </div>
+  </div>
+
+  <!-- Interests and Non-Interests -->
+  <div class="section">
+    <h2>My Career Interests</h2>
+    <div class="job-box">
+      <div>
+        <p><strong>I love doing:</strong></p>
+        <p>💻 Web Development</p>
+        <img src="https://cdn-icons-png.flaticon.com/512/2721/2721294.png" alt="Happy Coding">
+      </div>
+      <div>
+        <p><strong>I don’t enjoy:</strong></p>
+        <p>📞 Call Center Jobs</p>
+        <img src="https://cdn-icons-png.flaticon.com/512/742/742751.png" alt="Sad">
+      </div>
+    </div>
+  </div>
+
+  <!-- Neighbour Info -->
+  <div class="section">
+    <h2>My Neighbours</h2>
+    <p>👨‍🔧 Mr. Arun, my neighbor, is a <span class="bold">bike mechanic</span> who can fix any engine like magic.</p>
+    <p>👩‍🍳 Mrs. Radha, is a <span class="bold">home baker</span> and her chocolate cake is famous in our colony.</p>
+  </div>
+
+</body>
+</html>

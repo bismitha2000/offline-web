@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Locate the Scalpel</title>
+</head>
+<body>
+  <h2>Scalpel Location Tracker</h2>
+  <p id="result">Finding the scalpel...</p>
+
+  <script>
+    // Simulated storage for nests
+    const nestStorage = {
+      NestA: { scalpel: "NestB" },
+      NestB: { scalpel: "NestC" },
+      NestC: { scalpel: "NestC" } // Final location of the scalpel
+    };
+
+    // Simulated async storage access
+    function anyStorage(nestName, key) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(nestStorage[nestName][key]);
+        }, 300); // Simulate delay
+      });
+    }
+
+    // Async function to locate the scalpel
+    async function locateScalpel(startNest) {
+      let currentNest = startNest;
+      while (true) {
+        let nextNest = await anyStorage(currentNest, "scalpel");
+        if (nextNest === currentNest) {
+          return currentNest;
+        }
+        currentNest = nextNest;
+      }
+    }
+
+    // Run the function and show the result
+    locateScalpel("NestA").then(location => {
+      document.getElementById("result").innerText = 
+        "🔎 Scalpel found at: " + location;
+    });
+  </script>
+</body>
+</html>

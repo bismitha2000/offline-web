@@ -1,0 +1,10 @@
+<html>
+<scripts>
+let a = 25; let b = 5;
+
+console.log("Two-digit Arithmetic Operations:"); 
+console.log("Addition: " + (a + b)); 
+console.log("Subtraction: " + (a - b)); 
+console.log("Multiplication: " + (a * b)); 
+console.log("Division: " + (a / b));
+<scripts>

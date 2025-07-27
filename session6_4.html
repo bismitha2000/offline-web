@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Details</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #111, #444);
+      color: white;
+    }
+    p {
+      font-size: 20px;
+    }
+    button {
+      margin: 10px;
+      padding: 5px 15px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Product Details</h2>
+
+  <div id="products">
+    <p id="laptop">Laptop - 1000$</p>
+    <p id="cellphone">Cellphone - 300$</p>
+  </div>
+
+  <button onclick="addProduct()">add</button>
+  <button onclick="deleteProduct()">delete</button>
+
+  <script>
+    function addProduct() {
+      // Check if TV is already added
+      if (!document.getElementById("tv")) {
+        var tv = document.createElement("p");
+        tv.id = "tv";
+        tv.textContent = "TV - 700$";
+        document.getElementById("products").appendChild(tv);
+      }
+    }
+
+    function deleteProduct() {
+      var cell = document.getElementById("cellphone");
+      if (cell) {
+        cell.remove(); // Removes the cellphone paragraph
+      }
+    }
+  </script>
+
+</body>
+</html>

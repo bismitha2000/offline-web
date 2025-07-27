@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cookie Display</title>
+  <style>
+    body {
+      background-color: gray;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      color: white;
+    }
+    #resultBox {
+      background: white;
+      color: black;
+      display: inline-block;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+  </style>
+  <script>
+    function setCookie() {
+      document.cookie = "username=Duke Martin; path=/";
+      document.getElementById("output").innerText = "Cookie has been set.";
+    }
+
+    function getCookie() {
+      let cookies = document.cookie.split("; ");
+      let name = "username";
+      let value = "Duke Martin";
+      for (let i = 0; i < cookies.length; i++) {
+        let pair = cookies[i].split("=");
+        if (pair[0] === name) {
+          value = pair[1];
+          break;
+        }
+      }
+      document.getElementById("output").innerText = "Name=" + name + " Value=" + value;
+    }
+  </script>
+</head>
+<body>
+  <button onclick="setCookie()">setCookie</button>
+  <button onclick="getCookie()">getCookie</button>
+
+  <div id="resultBox">
+    <p id="output">Click getCookie to display the value</p>
+  </div>
+</body>
+</html>

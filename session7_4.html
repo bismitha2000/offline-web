@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reliable Multiply</title>
+</head>
+<body>
+  <h3>Multiply Two Numbers (Try until success)</h3>
+  <input type="number" id="num1" placeholder="Enter number 1">
+  <input type="number" id="num2" placeholder="Enter number 2">
+  <button onclick="startMultiply()">Multiply</button>
+
+  <p id="result"></p>
+
+  <script>
+    // Custom error class
+    class MultiplicatorUnitFailure extends Error {
+      constructor(message) {
+        super(message);
+        this.name = "MultiplicatorUnitFailure";
+      }
+    }
+
+    // Function that randomly fails
+    function primitiveMultiply(a, b) {
+      if (Math.random() < 0.2) {
+        return a * b;
+      } else {
+        throw new MultiplicatorUnitFailure("Multiplication unit failed.");
+      }
+    }
+
+    // Wrapper function that keeps trying until success
+    function reliableMultiply(a, b) {
+      while (true) {
+        try {
+          return primitiveMultiply(a, b);
+        } catch (err) {
+          if (!(err instanceof MultiplicatorUnitFailure)) {
+            throw err; // Only handle specific error
+          }
+          // Keep trying
+        }
+      }
+    }
+
+    // Main function triggered by button
+    function startMultiply() {
+      const a = Number(document.getElementById("num1").value);
+      const b = Number(document.getElementById("num2").value);
+      const result = reliableMultiply(a, b);
+      document.getElementById("result").innerHTML = "Result: " + result;
+    }
+  </script>
+</body>
+</html>

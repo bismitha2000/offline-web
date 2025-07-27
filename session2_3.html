@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Application Form</title>
+</head>
+<body>
+
+  <h2>Software Company - Job Application</h2>
+
+  <form>
+    <!-- Personal Info -->
+    <label>Position Applied For:</label><br>
+    <input type="text" name="position" autofocus required><br><br>
+
+    <label>Full Name:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Nationality:</label><br>
+    <input type="text" name="nationality" required><br><br>
+
+    <label>Date of Birth:</label><br>
+    <input type="date" name="dob" required><br><br>
+
+    <label>Address:</label><br>
+    <textarea name="address" rows="3" required></textarea><br><br>
+
+    <label>Telephone:</label><br>
+    <input type="tel" name="phone" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <!-- Education -->
+    <label>Educational History & Qualifications:</label><br>
+    <textarea name="education" rows="3" required></textarea><br><br>
+
+    <!-- Experience -->
+    <label>Employer History / Training:</label><br>
+    <textarea name="employer" rows="3" required></textarea><br><br>
+
+    <label>Years of Experience (0-10): <span id="years">0</span></label><br>
+    <input type="range" name="experience" min="0" max="10" value="0" oninput="years.innerText = this.value"><br><br>
+
+    <!-- Personal Statement -->
+    <label>Personal Statement:</label><br>
+    <textarea name="statement" rows="4" required></textarea><br><br>
+
+    <!-- Referee 1 -->
+    <h3>Referee 1</h3>
+    <label>Name:</label><br>
+    <input type="text" name="ref1name" required><br><br>
+
+    <label>Occupation:</label><br>
+    <input type="text" name="ref1occupation" required><br><br>
+
+    <label>Relationship:</label><br>
+    <input type="text" name="ref1relation" required><br><br>
+
+    <label>Address:</label><br>
+    <textarea name="ref1address" rows="2" required></textarea><br><br>
+
+    <label>Telephone:</label><br>
+    <input type="tel" name="ref1phone" required><br><br>
+
+    <!-- Referee 2 -->
+    <h3>Referee 2</h3>
+    <label>Name:</label><br>
+    <input type="text" name="ref2name" required><br><br>
+
+    <label>Occupation:</label><br>
+    <input type="text" name="ref2occupation" required><br><br>
+
+    <label>Relationship:</label><br>
+    <input type="text" name="ref2relation" required><br><br>
+
+    <label>Address:</label><br>
+    <textarea name="ref2address" rows="2" required></textarea><br><br>
+
+    <label>Telephone:</label><br>
+    <input type="tel" name="ref2phone" required><br><br>
+
+    <!-- Submit Button -->
+    <input type="submit" value="Submit Application">
+
+  </form>
+
+</body>
+</html>

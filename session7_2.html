@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grade Labs</title>
+</head>
+<body>
+
+  <h2>Web Design Lab Grading</h2>
+  <pre id="output"></pre>
+
+  <script>
+    const labs = [
+      {
+        student: "Alice",
+        runLab: function () { return 10 + 5; },
+        expectedResult: 15
+      },
+      {
+        student: "Bob",
+        runLab: function () { return 2 * 3; },
+        expectedResult: 6
+      },
+      {
+        student: "Charlie",
+        runLab: function () { return 8 / 2; },
+        expectedResult: 5  // Incorrect result expected
+      }
+    ];
+
+    function gradeLabs(labs) {
+      let output = "";
+      for (let i = 0; i < labs.length; i++) {
+        const lab = labs[i];
+        try {
+          const result = lab.runLab();
+          if (result === lab.expectedResult) {
+            output += `${lab.student}: Passed ✅\n`;
+          } else {
+            output += `${lab.student}: Failed ❌ (Expected ${lab.expectedResult}, got ${result})\n`;
+          }
+        } catch (e) {
+          output += `${lab.student}: Error during lab execution ❌ (${e})\n`;
+        }
+      }
+      document.getElementById("output").textContent = output;
+    }
+
+    // Call the grading function
+    gradeLabs(labs);
+  </script>
+
+</body>
+</html>

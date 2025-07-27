@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Animal Viewer</title>
+</head>
+<body>
+  <h3>Enter Animal Index:</h3>
+  <input type="number" id="indexInput">
+  <button onclick="showAnimal()">Show</button>
+
+  <p id="output"></p>
+
+  <script>
+    const animals = ["Lion", "Tiger", "Elephant", "Zebra"];
+
+    function showAnimal() {
+      let index = document.getElementById("indexInput").value;
+      let output = document.getElementById("output");
+
+      output.innerHTML = "You entered index: " + index + "<br>";
+
+      try {
+        let animal = animals[index];
+        if (animal === undefined) throw "No animal at this index.";
+        output.innerHTML += "Animal: " + animal;
+      } catch (err) {
+        output.innerHTML += "Error: " + err;
+      }
+    }
+  </script>
+</body>
+</html>

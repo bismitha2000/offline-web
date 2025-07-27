@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Two-Digit Arithmetic Operations</title>
+</head>
+<body>
+  <h2>Enter Two Numbers</h2>
+
+  <label>First Number: </label>
+  <input type="number" id="num1"><br><br>
+
+  <label>Second Number: </label>
+  <input type="number" id="num2"><br><br>
+
+  <button onclick="performOperations()">Calculate</button>
+
+  <h3>Results:</h3>
+  <p id="add"></p>
+  <p id="sub"></p>
+  <p id="mul"></p>
+  <p id="div"></p>
+
+  <script>
+    function performOperations() {
+      let a = parseFloat(document.getElementById("num1").value);
+      let b = parseFloat(document.getElementById("num2").value);
+
+      document.getElementById("add").innerHTML = "Addition: " + (a + b);
+      document.getElementById("sub").innerHTML = "Subtraction: " + (a - b);
+      document.getElementById("mul").innerHTML = "Multiplication: " + (a * b);
+      
+      if (b !== 0) {
+        document.getElementById("div").innerHTML = "Division: " + (a / b).toFixed(2);
+      } else {
+        document.getElementById("div").innerHTML = "Division: Cannot divide by zero";
+      }
+    }
+  </script>
+</body>
+</html>

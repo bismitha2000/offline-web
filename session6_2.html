@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Event Listener Example</title>
+  <script>
+    window.onload = function() {
+      // Get the button by its ID
+      var btn = document.getElementById("myButton");
+
+      // Add a click event listener dynamically
+      btn.addEventListener("click", function() {
+        document.getElementById("output").textContent = "Button was clicked!";
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <h2>Click the Button</h2>
+  <button id="myButton">Click Me</button>
+
+  <p id="output"></p>
+
+</body>
+</html>

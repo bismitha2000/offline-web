@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Expression Evaluator</title>
+</head>
+<body>
+
+  <form onsubmit="evaluate(event)">
+    <table border="1">
+      <tr>
+        <th>Expression</th>
+        <th>Result</th>
+      </tr>
+      <tr>
+        <td><input type="text" id="expr1" value="1+1"></td>
+        <td><span id="res1"></span></td>
+      </tr>
+      <tr>
+        <td><input type="text" id="expr2" value="1+1*2"></td>
+        <td><span id="res2"></span></td>
+      </tr>
+    </table>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    function evaluate(e) {
+      e.preventDefault();
+      document.getElementById("res1").innerText = eval(document.getElementById("expr1").value);
+      document.getElementById("res2").innerText = eval(document.getElementById("expr2").value);
+    }
+  </script>
+
+</body>
+</html>

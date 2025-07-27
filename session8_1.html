@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Library Book Management</title>
+</head>
+<body>
+  <h2>Library Book Management</h2>
+  <button onclick="manageBooks()">Check Books</button>
+  <div id="output"></div>
+
+  <script>
+    // Base Book class
+    class Book {
+      constructor(title, author, copyright, isbn, pages, timesCheckedOut) {
+        this.title = title;
+        this.author = author;
+        this.copyright = copyright;
+        this.isbn = isbn;
+        this.pages = pages;
+        this.timesCheckedOut = timesCheckedOut;
+        this.discarded = false;
+      }
+
+      displayInfo() {
+        return `<strong>${this.title}</strong> by ${this.author}<br>
+                Checked Out: ${this.timesCheckedOut} times<br>
+                Discarded: ${this.discarded}<br><br>`;
+      }
+    }
+
+    // Manual book - discard if older than 5 years
+    class Manual extends Book {
+      constructor(title, author, copyright, isbn, pages, timesCheckedOut) {
+        super(title, author, copyright, isbn, pages, timesCheckedOut);
+      }
+
+      checkDiscard(currentYear) {
+        if (currentYear - this.copyright > 5) {
+          this.discarded = true;
+        }
+      }
+    }
+
+    // Novel book - discard if checked out more than 100 times
+    class Novel extends Book {
+      constructor(title, author, copyright, isbn, pages, timesCheckedOut) {
+        super(title, author, copyright, isbn, pages, timesCheckedOut);
+      }
+
+      checkDiscard() {
+        if (this.timesCheckedOut > 100) {
+          this.discarded = true;
+        }
+      }
+    }
+
+    // Function to create books and show results
+    function manageBooks() {
+      let output = document.getElementById("output");
+
+      const novel1 = new Novel("The Great Story", "A. Writer", 2018, "1111", 300, 105);
+      novel1.checkDiscard();
+
+      const manual1 = new Manual("User Guide", "Tech Team", 2017, "2222", 120, 20);
+      manual1.checkDiscard(new Date().getFullYear());
+
+      output.innerHTML =
+        "<h4>Book Status:</h4>" +
+        novel1.displayInfo() +
+        manual1.displayInfo();
+    }
+  </script>
+</body>
+</html>
